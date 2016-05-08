@@ -1,0 +1,76 @@
+<html>
+	<head>
+	<script type="text/javascript">
+		function samehada()
+			{
+				var formulario= document.getElementById('pagos');
+				//document.write(formulario.action);
+				var entrada1=parseFloat(formulario.elements[0].value);
+				var entrada2=parseFloat(formulario.elements[1].value);
+				//var salida=entrada1*entrada2*0.2;
+				var salida=Math.sin(entrada2);
+				salida=salida.toFixed(2);
+				formulario.elements[2].value=salida
+				
+				
+			}
+			
+		function rasengan()
+			{
+				var formulario= document.getElementById('temari');
+				var entrada1=parseFloat(formulario.elements[0].value);
+				var salida=5*entrada1;
+				formulario.elements[1].value=salida
+				
+				
+			}	
+	
+	</script>
+	</head>
+	
+	<body>
+		<div style="background-color:gray; width:350px; height:300px">
+		<form id="pagos" action="" method="get" >
+		<table border="0">
+			<tr>
+					<td style="text-align:center;"><font size="7" color="blue">x</font></td>
+					<td><input type="text" value=""></td>
+			</tr>
+			<tr>
+				<td style="text-align:center;"><font size="7" color="blue">y</font></td>
+				<td><input type="text" value=""></td>
+				
+			</tr>
+			<tr>
+				<td><input type="label" id="etiqueta1"value=""></td>
+				<td><input type="button" onClick="samehada();" value="calcular"></td>
+			</tr>
+			
+		</table>
+		</form>
+		</div><br><br>
+		
+		<div style="background-color:yellow; width:350px; height:300px">
+			<form id="temari">
+				<table>
+					<tr>
+						<td>
+							<input type="text" value="">
+						</td>
+					</tr>
+					<tr>
+						<input type="label" value="">
+					</tr>
+					<tr>
+						<td><input type="button" onClick="rasengan();" value="calcular"></td>
+					</tr>
+				</table
+			</form>
+		</div>
+		
+		
+		
+		
+	</body>
+
+</html>
