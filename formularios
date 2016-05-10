@@ -1,29 +1,75 @@
 <html>
 	<head>
 	<script type="text/javascript">
-		function samehada()
+	var subex=0;
+	var bajak=0;
+	var aciertok=0;
+	var fallok=0;
+	var perdidas=0;
+	var ganancia=0.72;
+	var invierta=0;
+		function sube()
 			{
 				var formulario= document.getElementById('pagos');
 				//document.write(formulario.action);
-				var entrada1=parseFloat(formulario.elements[0].value);
+				//var entrada1=parseFloat(formulario.elements[0].value);
 				var entrada2=parseFloat(formulario.elements[1].value);
 				//var salida=entrada1*entrada2*0.2;
-				var salida=Math.sin(entrada2);
-				salida=salida.toFixed(2);
-				formulario.elements[2].value=salida
+				 subex= subex+1;
+				//salida=salida.toFixed(2);
+				formulario.elements[1].value=subex
 				
 				
 			}
 			
-		function rasengan()
+		function baja()
 			{
-				var formulario= document.getElementById('temari');
-				var entrada1=parseFloat(formulario.elements[0].value);
-				var salida=5*entrada1;
-				formulario.elements[1].value=salida
+				var formulario= document.getElementById('pagos');
+				 bajak= bajak+1;
+				//salida=salida.toFixed(2);
+				formulario.elements[3].value=bajak
 				
 				
-			}	
+			}
+		function aciertos()
+			{
+				var formulario= document.getElementById('pagos');
+				 aciertok= aciertok+1;
+			
+				
+				formulario.elements[5].value=aciertok;
+				perdidas=0;
+				formulario.elements[9].value=perdidas;
+				
+				
+			}
+		function fallos()
+			{
+				var formulario= document.getElementById('pagos');
+				fallok= fallok+1;
+				formulario.elements[7].value=fallok;
+				var valor = prompt("Cuanto perdio");
+				//alert(valor);
+				valor=parseInt(valor);
+				perdidas= perdidas+valor;
+				formulario.elements[8].value=perdidas;
+				calcularInversion();
+				formulario.elements[9].value=invierta;
+				
+				
+			}
+		function calcularInversion(){
+			for(var i=1;i<59;i++){
+				if((i*ganancia)>perdidas){
+					invierta=i;break;
+				}
+			}
+			
+			
+		}
+
+
+			
 	
 	</script>
 	</head>
@@ -33,42 +79,47 @@
 		<form id="pagos" action="" method="get" >
 		<table border="0">
 			<tr>
-					<td style="text-align:center;"><font size="7" color="blue">x</font></td>
-					<td><input type="text" value=""></td>
+					<td><input type="button" onClick="sube();" value="sube"></td>
+					<td><input type="label" id="etiqueta1"value=""></td>
+					
 			</tr>
 			<tr>
-				<td style="text-align:center;"><font size="7" color="blue">y</font></td>
-				<td><input type="text" value=""></td>
-				
+					<td><input type="button" onClick="baja();" value="baja"></td>
+					<td><input type="label" id="etiqueta2"value=""></td>
+					
 			</tr>
 			<tr>
-				<td><input type="label" id="etiqueta1"value=""></td>
-				<td><input type="button" onClick="samehada();" value="calcular"></td>
+					<td><input type="button" onClick="aciertos();" value="aciertos"></td>
+					<td><input type="label" id="etiqueta3"value=""></td>
+					
 			</tr>
+			<tr>
+					<td><input type="button" onClick="fallos();" value="fallos"></td>
+					<td><input type="label" id="etiqueta4"value=""></td>
+					
+			</tr>
+			<tr>
+					
+					<td><input type="label" id="etiqueta5"value=""></td>
+					<td><input type="label" id="etiqueta6"value=""></td>
+					
+			</tr>
+			<tr>
+					
+					<td><input type="label" id="etiqueta5"value="Total perdidas"></td>
+					<td><input type="label" id="etiqueta6"value="Valor a invertir"></td>
+					
+			</tr>
+			
+			
+			
 			
 		</table>
 		</form>
 		</div><br><br>
 		
-		<div style="background-color:yellow; width:350px; height:300px">
-			<form id="temari">
-				<table>
-					<tr>
-						<td>
-							<input type="text" value="">
-						</td>
-					</tr>
-					<tr>
-						<input type="label" value="">
-					</tr>
-					<tr>
-						<td><input type="button" onClick="rasengan();" value="calcular"></td>
-					</tr>
-				</table
-			</form>
-		</div>
-		
-		
+		<h1> 09 de Mayo de 2016  Antes 975,65   Despues 987.65</h1>
+		<h1> 09 de Mayo de 2016  Antes 987,65   Despues 997.05</h1>
 		
 		
 	</body>
