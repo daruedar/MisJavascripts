@@ -1,0 +1,8 @@
+<div class="limiter">
+ <label>Show</label>
+ <select onchange="setLocation(this.value)">
+   <option value="index1.html">12</option>
+   <option value="index2.html">24</option>
+   <option value="index3.html">36</option>
+  </select>         
+	</div>
