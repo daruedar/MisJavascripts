@@ -1,0 +1,23 @@
+<html>
+ <head><meta charset="UTF-8"></head>
+ <body>
+    <h2>Gramos de Hidrogeno obtenidos por corriente  en el proceso de electrolisis de agua</h2>
+	<h4>corriente</h4><input type="text" id='amperios'>Amperios</br>
+	<h4>Gramos de Hidrogeno:</h4><input type="number" id='gramos' ></br></br>
+	<input type='button' name='btn'onclick='procesar()' value='Calcular'>
+	<script type="text/javascript">
+	function getGramos(amperios){
+		   var carga= amperios*(6.24e18);//por cantidad de electrones
+		   var moleculasH2=carga/2;//por la tabla fem
+		   var molesH2=(moleculasH2/6.022e23);//Dividido por avogadro 
+		   var gramosH2=molesH2*2.016;//Peso molecular del H2	
+		   return gramosH2;
+		}
+	function procesar(){
+		var amperios=parseFloat(document.getElementById('amperios').value);
+		var output=getGramos(amperios);
+		document.getElementById('gramos').value=output;
+		}
+	</script>
+ </body>
+</html>
